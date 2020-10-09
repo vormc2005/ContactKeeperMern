@@ -1,9 +1,11 @@
 const express = require('express');
-
+const connectDB = require('./config/db');
 //initialize express
 const app = express();
 
+// Connect DB
 
+connectDB();
 
 app.get('/', (req, res)=>res.send({msg:'Welcome to the contact keeper API'}))
 //Define our routes
