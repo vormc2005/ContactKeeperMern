@@ -37,9 +37,10 @@ async (req, res)=>{
     //Check if user exist
 
     try{
-        let user =await User.findOne({email:email});
+        let user =await User.findOne({email});
+
         if(user){
-            res.status(400).json({msg: 'User already exists'})
+           return res.status(400).json({msg: 'User already exists'})
         }
         user = new User({
             name, 
